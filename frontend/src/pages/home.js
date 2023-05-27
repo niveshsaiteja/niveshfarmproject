@@ -74,7 +74,7 @@ const Home = () => {
       </div>
      
       <div className='py-4'>
-        
+      <h2 className='font-bold text-2xl text-slate-800 mb-4'>Product Gallery</h2>
         <Menu list={menuItemsData} ref={menuRef}/>
 
       </div>
