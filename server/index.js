@@ -38,7 +38,7 @@ app.get("/",(req,res)=>{
     res.send("server is running")
 })
 
-app.post("/signup",async(req,res)=>{
+/* app.post("/signup",async(req,res)=>{
     console.log(req.body)
     const {email} = req.body
 
@@ -56,10 +56,32 @@ app.post("/signup",async(req,res)=>{
         }  
     })
 
-})
+})*/
+
+//API - User Signup
+app.post("/signup", async (req, res) => {
+
+    console.log(req.body);
+    const { email } = req.body;
+    
+    try {
+      const result = await userModel.findOne({ email: email });
+      if (result) {
+        res.send({ message: "Email id is already registered", alert: false });
+      } else {
+        const data = await userModel.create(req.body);
+        res.send({ message: "Successfully signed up", alert: true });
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Error signing up", alert: false });
+    }
+    })
+
+
 
 //api login 
-app.post("/login",async(req,res)=>{
+/*app.post("/login",async(req,res)=>{
     console.log(req.body)
     const {email} = req.body;
     userModel.findOne({ email: email}, (err,result) =>{
@@ -81,6 +103,35 @@ app.post("/login",async(req,res)=>{
         }
     })
 })
+*/
+
+//API - User Login
+app.post("/login", async (req, res) => {
+
+console.log(req.body);
+  const { email } = req.body;
+
+  try {
+    const result = await userModel.findOne({ email: email });
+    if (result) {
+      const dataSend = {
+        _id: result._id,
+        firstName: result.firstName,
+        lastName: result.lastName,
+        email: result.email,
+        image: result.image,
+      };
+      console.log(dataSend);
+      res.send({ message: "Login successful", alert: true, data: dataSend });
+    } else {
+      res.send({ message: "Login failed", alert: false });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: "Error logging in", alert: false });
+  }
+});
+
 
 
 //product section

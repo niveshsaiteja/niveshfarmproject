@@ -62,7 +62,7 @@ console.log(userData)
                     userData.email === process.env.REACT_APP_ADMIN_EMAIL &&  <Link to={"newproduct"} className="whitespace-nowrap cursor-pointer px-2">New Product</Link> 
               }
                 {
-                  userData.image ? (<p className="cursor-pointer text-white px-2 bg-red-500" onClick={handleLogout}> Logout ({userData.firstname}) </p>) : (<Link to={"login"} className="whitespace-nowrap px-2 m-2">Login</Link>)
+                  userData.image ? (<p className="cursor-pointer text-white px-2 bg-red-500" onClick={handleLogout}> Logout {userData.firstname} </p>) : (<Link to={"login"} className="whitespace-nowrap px-2 m-2">Login</Link>)
                 }
 
               <nav className=" text-base ma:text-lg flex flex-col md:hidden">

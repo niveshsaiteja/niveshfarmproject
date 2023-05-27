@@ -56,7 +56,7 @@ const handleOnChange = (e)=>{
       if(dataRes.alert){
         dispatch(loginRedux(dataRes))
         setTimeout(() =>{
-          navigate("/home")
+          navigate("/");
         }, 1000);
       }
 
