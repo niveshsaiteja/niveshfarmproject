@@ -1,0 +1,34 @@
+
+.admin-details {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .admin-details-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .admin-details-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-details-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .admin-details-label {
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .admin-details-value {
+    color: #333;
+  }
+  

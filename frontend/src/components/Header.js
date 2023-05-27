@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/foodlogo1.png";
 import { Link } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
 import { BsFillCartFill } from "react-icons/bs";
@@ -32,7 +32,7 @@ console.log(userData)
       <div className="flex item-center h-full justify-between">  
         <Link to={""}>
           <div className="h-10">
-            <img src={logo} className="h-full" />
+            <img src={logo} className="h-full mt-5" />
           </div>
         </Link>
 
@@ -69,6 +69,7 @@ console.log(userData)
                <Link to={""} className="px-2 py-1 ">Home</Link>
                <Link to={"menu/6450c7b076fd3a9f92fa9868"} className="px-2 py-1 ">Menu</Link>
                <Link to={"about"} className="px-2 py-1 ">About</Link>
+               <Link to={"newproduct"}>Farmer space</Link>
                <Link to={"contact"} className="px-2 py-1 ">Contact</Link>
              </nav>
               </div>

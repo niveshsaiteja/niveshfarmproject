@@ -1,0 +1,52 @@
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    padding: 10px;
+  }
+  
+  .dashboard-table th {
+    font-weight: bold;
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .dashboard-table td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+  
+  .dashboard-table td.profit {
+    color: green;
+  }
+  
+  .dashboard-table td.loss {
+    color: red;
+  }
+  
+  .dashboard-table .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .dashboard-table .stats .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dashboard-table .stats .stat-item .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .dashboard-table .stats .stat-item .stat-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  
