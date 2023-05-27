@@ -1,10 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef } from 'react'
 import { useSelector } from 'react-redux'
 import HomeCard from '../components/HomeCard'
 import CardFeature from '../components/CardFeature'
 import {GrNext,GrPrevious} from "react-icons/gr"
-import FilterProduct from '../components/FilterProduct'
+//import FilterProduct from '../components/FilterProduct'
 import AllProduct from '../components/AllProduct'
+import Menu from '../components/Menu'
+import { menuItemsData } from '../components/Menu/data';
+
 
 const Home = () => {
   const productData = useSelector((state) =>state.product.productList)
@@ -25,6 +28,8 @@ const Home = () => {
   const preveProduct = ()=>{
     slideProductRef.current.scrollLeft -=200
   }
+  const menuRef = useRef();
+  
 
   
 
@@ -34,7 +39,7 @@ const Home = () => {
         <div className='md:w-1/2'>
           <div className='flex gap-3 bg-slate-300 w-36 px-2 items-center rounded-full'>
             <p className='text-sm font-medium text-slate-900'>Bike Delivery</p>
-            <img src='https://cdn-icons-png.flaticon.com/512/738/738000.png?w=740&t=st=1683041396~exp=1683041996~hmac=6b6ab7c9ec170f27a083b16926c26d93f6c30c68e33a6d0358e72a4719e40634' className='h-7'/>
+            <img src='https://cdn-icons-png.flaticon.com/512/738/738000.png?w=740&t=st=1683041396~exp=1683041996~hmac=6b6ab7c9ec170f27a083b16926c26d93f6c30c68e33a6d0358e72a4719e40634' alt='..loading' className='h-7'/>
           </div>
           <h2 className='text-4xl md:text-7xl font-bold py-3'>The Fastest Delivery to <span className='text-red-500 '>Your Home</span></h2>
           <p className='py-3 text-base '>  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, ad praesentium perspiciatis nisi dolorum ex voluptatem veniam doloremque nam quod, repudiandae architecto quas reprehenderit molestiae corrupti perferendis nobis obcaecati repellat?</p>
@@ -67,7 +72,13 @@ const Home = () => {
           }
         </div>
       </div>
+     
+      <div className='py-4'>
+        
+        <Menu list={menuItemsData} ref={menuRef}/>
 
+      </div>
+      
       <div className='py-4'>
        <div className='flex w-full items-center'>
        <h2 className='font-bold text-2xl text-slate-800 mb-4'>Fresh Vegetables</h2>
