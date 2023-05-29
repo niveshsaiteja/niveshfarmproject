@@ -22,12 +22,21 @@ const Home = () => {
 
 
   const slideProductRef = useRef()
+  const slideProductRef2 = useRef()
   const nextProduct = ()=>{
     slideProductRef.current.scrollLeft +=200
   }
   const preveProduct = ()=>{
     slideProductRef.current.scrollLeft -=200
   }
+
+  const nextProduct2 = ()=>{
+    slideProductRef2.current.scrollLeft +=200
+  }
+  const preveProduct2 = ()=>{
+    slideProductRef2.current.scrollLeft -=200
+  }
+
   const menuRef = useRef();
   
 
@@ -115,17 +124,17 @@ const Home = () => {
        <div className='flex w-full items-center'>
        <h2 className='font-bold text-2xl text-slate-800 mb-4'>Fresh Fruits</h2>
        <div className='ml-auto flex gap-4'>
-        <button onClick={preveProduct} className='bg-slate-300 hover:bg-slate-400 text-lg p-1 rounded'><GrPrevious/></button>
-        <button onClick={nextProduct} className='bg-slate-300 hover:bg-slate-400 text-lg p-1 rounded'><GrNext/></button>
+        <button onClick={preveProduct2} className='bg-slate-300 hover:bg-slate-400 text-lg p-1 rounded'><GrPrevious/></button>
+        <button onClick={nextProduct2} className='bg-slate-300 hover:bg-slate-400 text-lg p-1 rounded'><GrNext/></button>
        </div>
        </div>
-        <div className='flex gap-5 overflow-scroll scrollbar-none scroll-smooth transition-all' ref={slideProductRef}>
+        <div className='flex gap-5 overflow-scroll scrollbar-none scroll-smooth transition-all' ref={slideProductRef2}>
 
           {
              homeProductCartListFruits[0] ? homeProductCartListFruits.map(el =>{
               return(
                 <CardFeature
-                  key = {el._id}
+                  key = {el._id}  
                   id = {el._id}
                   name = {el.name}
                   category = {el.category}
@@ -135,7 +144,7 @@ const Home = () => {
               )
             })
             :
-            loadingArrayFeature.map((el,index) =>( 
+            loadingArrayFeature.map((el,index) =>(
             <CardFeature
               loading = "loading..."  key={index}
             />))
