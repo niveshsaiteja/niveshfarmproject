@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/foodlogo1.png";
 import { Link } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutRedux } from "../redux/userSlice";
 import { toast } from "react-hot-toast";
 const Header = () => {
-   const [showMenu, setShowMenu] = React.useState(false);
+   const [showMenu, setShowMenu] = useState(false);
    const userData = useSelector((state) => state.user)
 console.log(userData) 
    const dispatch = useDispatch()

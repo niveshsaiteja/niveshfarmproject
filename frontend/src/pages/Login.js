@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import loginSignupImage from "../assets/login-animation.gif"
 import { BiShow } from "react-icons/bi";
@@ -9,8 +9,8 @@ import { useDispatch , useSelector } from 'react-redux';
 import { loginRedux } from "../redux/userSlice";
 
 const Login = () => {
-  const [showPassword,setShowPassword] = React.useState(false)
-  const [data,setdata] = React.useState({
+  const [showPassword,setShowPassword] = useState(false)
+  const [data,setdata] = useState({
     email : "",
     password : ""
   });
